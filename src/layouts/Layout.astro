@@ -1,0 +1,61 @@
+---
+import { AstroFont } from "astro-font";
+import AppFooter from "../components/AppFooter.astro";
+import AppHeader from "../components/AppHeader.astro";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Comunidade Evolui.dev - Aqui você evolui como desenvolvedor(a)"
+    />
+    <title>Comunidade Evolui.dev</title>
+    <AstroFont
+      config={[
+        {
+          src: [],
+          name: "Urbanist",
+          preload: true,
+          display: "swap",
+          selector: "html",
+          fallback: "sans-serif",
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap",
+        },
+      ]}
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R902ECW7ZS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-R902ECW7ZS");
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <AppHeader />
+    <slot />
+    <AppFooter />
+  </body>
+</html>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+  }
+</style>

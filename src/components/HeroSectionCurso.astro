@@ -1,0 +1,56 @@
+---
+import Container from "./Container.astro";
+const { title, description, image, link, label } = Astro.props;
+---
+
+<div class="relative" id="home">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+  >
+    <div
+      class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"
+    >
+    </div>
+    <div
+      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
+    >
+    </div>
+  </div>
+  <Container>
+    <div class="relative pt-36 ml-auto">
+      <div class="lg:w-2/3 text-center mx-auto">
+        <div class="flex justify-center mb-8">
+          <img src={image} alt={title} class="w-96 rounded-md" />
+        </div>
+        <h1
+          class="text-gray-900 dark:text-white font-bold text-2xl md:text-3xl xl:text-4xl"
+        >
+          <span class="text-primary dark:text-white">{title}</span>
+        </h1>
+        <p class="mt-8 text-gray-700 dark:text-gray-300">
+          {description}
+        </p>
+        <div class="mt-8">
+          <a
+            href={link}
+            class="inline-block bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-6 rounded-md shadow-md transition-all duration-300"
+          >
+            Comprar com desconto
+          </a>
+        </div>
+        <p class="mt-6 text-gray-600 dark:text-gray-400 text-sm">
+          Gostou do curso?
+          <a
+            href={`https://github.com/WebEvolui/evolui.dev/issues/new?labels=curso,sugest%C3%A3o,${label}`}
+            rel="noopener noreferrer"
+            class="text-purple-600 hover:underline"
+          >
+            Comente sobre ele no nosso GitHub
+          </a>
+          e ajude a melhorá-lo!
+        </p>
+      </div>
+    </div>
+  </Container>
+</div>
