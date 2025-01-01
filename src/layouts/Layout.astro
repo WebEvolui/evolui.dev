@@ -2,6 +2,12 @@
 import { AstroFont } from "astro-font";
 import AppFooter from "../components/AppFooter.astro";
 import AppHeader from "../components/AppHeader.astro";
+
+const title = "Comunidade Evolui.dev";
+const description =
+  "Comunidade Evolui.dev - Aqui você evolui como desenvolvedor(a)";
+const image = "/images/evolui.dev.png";
+const url = "https://evolui.dev";
 ---
 
 <!doctype html>
@@ -10,12 +16,26 @@ import AppHeader from "../components/AppHeader.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <title>Comunidade Evolui.dev</title>
     <meta
       name="description"
       content="Comunidade Evolui.dev - Aqui você evolui como desenvolvedor(a)"
     />
-    <title>Comunidade Evolui.dev</title>
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
     <AstroFont
       config={[
         {
