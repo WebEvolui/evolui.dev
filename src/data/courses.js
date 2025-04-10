@@ -8,6 +8,14 @@ const options = {
 
 export const courses = [
     {
+        id: slugify("Desenvolvimento Web: construindo aplicação de maneira rápida", options),
+        title: "Desenvolvimento Web: construindo aplicação de maneira rápida",
+        description: "Já pensou em fazer aplicações de maneira super rápida, segura e com qualidade?",
+        image: "/images/cursos/desenvolvimento-web-construindo-aplicacao-de-maneira-rapida.webp",
+        link: "https://www.udemy.com/course/desenvolvimento-web-construindo-aplicacao-de-maneira-rapida/?couponCode=0042D6FB0-ABR2025",
+        label: "Curso Quasar",
+    },
+    {
         id: slugify("Go para iniciantes: Uma introdução a linguagem do Google", options),
         title: "Go para iniciantes: Uma introdução a linguagem do Google",
         description: "Fundamentos teóricos, desafios práticos e SUPORTE garantido para uma aprendizagem completa.",
@@ -26,7 +34,7 @@ export const courses = [
     {
         id: slugify("Laravel 12 e Flutter 3 aplicações com comunicação real-time 2025 - Impressor", options),
         title: "Laravel 12 e Flutter 3 aplicações com comunicação real-time 2025 - Impressor",
-        description: "Curso completo de Flutter e Dart - Aprenda desde o básico até aplicativos práticos para Android, iOS, Windows e Mac.",
+        description: "Domine Flutter e Laravel com foco em comunicação em tempo real, criando aplicações modernas e integradas para múltiplas plataformas.",
         image: "/images/cursos/laravel-11-e-flutter-3-aplicacoes-realtime-2024-impressor.webp",
         link: "https://www.udemy.com/course/laravel-11-flutter-3-aplicacoes-tempo-real-impressor-delivery-desktop/?couponCode=3D7594A9946-ABR2025",
         label: "Curso Flutter e Laravel - RealTime",
