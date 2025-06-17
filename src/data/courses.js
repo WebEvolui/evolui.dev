@@ -8,6 +8,22 @@ const options = {
 
 export const courses = [
     {
+        id: slugify("Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store", options),
+        title: "Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store",
+        description: "Aprenda de uma vez por todas como publicar seu aplicativo nas lojas oficiais! Vamos partir de uma ideia até seu app nas lojas!",
+        image: "/images/cursos/da-ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-play-e-apple-store.png",
+        link: "https://go.hotmart.com/M100306334X?dp=1",
+        label: "Curso deploy nas lojas",
+    },
+    {
+        id: slugify("Curso Django REST Framework: crie APIs com Python", options),
+        title: "Curso Django REST Framework: crie APIs com Python",
+        description: "Aprenda como criar aplicações REST com Python usando o DRF (Django REST Framework). Sua API de maneira fácil e segura",
+        image: "/images/cursos/curso-django-rest-framework-crie-apis-com-python.webp",
+        link: "https://www.udemy.com/course/curso-django-rest-framework-crie-apis-com-python/?couponCode=7CBE077A33-JUNHO2025",
+        label: "Curso Django REST Framework",
+    },
+    {
         id: slugify("Quasar 2 framework: construindo um mini ERP online com API", options),
         title: "Quasar 2 framework: construindo um mini ERP online com API",
         description: "Quasar Framework é um framework de código aberto baseado em Vue.js para construir aplicativos com uma única code base",
