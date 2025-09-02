@@ -3,9 +3,9 @@ import { AstroFont } from "astro-font";
 import AppFooter from "../components/AppFooter.astro";
 import AppHeader from "../components/AppHeader.astro";
 
-const title = "Comunidade Evolui.dev";
+const title = "Evolui.dev - Cursos de programação e comunidade";
 const description =
-  "Comunidade Evolui.dev - Aqui você evolui como desenvolvedor(a)";
+  "Evolui.dev - Aqui você evolui como desenvolvedor(a)";
 const image = "/images/evolui.dev.png";
 const url = "https://evolui.dev";
 ---
@@ -16,10 +16,10 @@ const url = "https://evolui.dev";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <title>Comunidade Evolui.dev</title>
+    <title>{title}</title>
     <meta
       name="description"
-      content="Comunidade Evolui.dev - Aqui você evolui como desenvolvedor(a)"
+      content={description}
     />
     <meta name="generator" content={Astro.generator} />
 
