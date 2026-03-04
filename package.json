@@ -17,6 +17,7 @@
     "slugify": "^1.6.6"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2"
+    "@astrojs/tailwind": "^6.0.2",
+    "baseline-browser-mapping": "^2.10.0"
   }
 }
