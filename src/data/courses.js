@@ -12,7 +12,7 @@ export const courses = [
         title: "Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store",
         description: "Aprenda de uma vez por todas como publicar seu aplicativo nas lojas oficiais! Vamos partir de uma ideia até seu app nas lojas!",
         image: "/images/cursos/da-ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-play-e-apple-store.png",
-        link: "https://go.hotmart.com/M100306334X?dp=1",
+        link: "https://www.udemy.com/course/ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-apple/?couponCode=LANCAMENTO-1FFEC9035",
         label: "Curso deploy nas lojas",
     },
     {
