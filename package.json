@@ -2,7 +2,7 @@
   "name": "evolui.dev",
   "description": "Site da comunidade Evolui.dev",
   "author": "webevolui.com.br",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
