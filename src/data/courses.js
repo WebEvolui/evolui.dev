@@ -21,7 +21,7 @@ export const courses = [
         description: "Aprenda como criar aplicações REST com Python usando o DRF (Django REST Framework). Sua API de maneira fácil e segura",
         image: "/images/cursos/curso-django-rest-framework-crie-apis-com-python.webp",
         link: "https://www.udemy.com/course/curso-django-rest-framework-crie-apis-com-python/?couponCode=4B5A95FCBE-ABR2026",
-        label: "Curso Django REST Framework",
+        label: "Curso API com Django REST Framework",
     },
     {
         id: slugify("Quasar 2 framework: construindo um mini ERP online com API", options),
