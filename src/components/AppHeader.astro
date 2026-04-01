@@ -64,17 +64,17 @@ import Container from "./Container.astro";
 
 <style>
     #toggle_nav:checked ~ div #hamburger #line {
-        @apply translate-y-1.5 rotate-45;
+        transform: translateY(0.375rem) rotate(45deg);
     }
 
     #toggle_nav:checked ~ div #hamburger #line2 {
-        @apply -translate-y-1 -rotate-45;
+        transform: translateY(-0.25rem) rotate(-45deg);
     }
 
     .toggled div:first-child {
-        @apply translate-y-1.5 rotate-45;
+        transform: translateY(0.375rem) rotate(45deg);
     }
     .toggled div:last-child {
-        @apply -translate-y-1 -rotate-45;
+        transform: translateY(-0.25rem) rotate(-45deg);
     }
 </style>

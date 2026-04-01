@@ -19,26 +19,26 @@ import { courses } from "../data/courses";
         courses.map((course) => (
           <div
             data-course-card
-            class="group p-6 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+            class="group flex h-full flex-col p-6 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
           >
-            <div class="relative overflow-hidden rounded-xl">
+            <div class="relative overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-700 aspect-[750/422]">
               <img
                 src={course.image}
                 alt="art cover"
                 loading="lazy"
                 width="1000"
                 height="667"
-                class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                class="h-full w-full object-contain transition duration-500 group-hover:scale-105"
               />
             </div>
-            <div class="mt-6 relative">
+            <div class="mt-6 relative flex flex-1 flex-col">
               <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
                 {course.title}
               </h3>
-              <p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+              <p class="mt-6 text-gray-600 dark:text-gray-300">
                 {course.description}
               </p>
-              <div class="flex items-center justify-between">
+              <div class="mt-auto pt-8 flex items-center justify-between">
                 <a class="inline-block" href={`/curso/${course.id}`}>
                   <span class="text-info text-primary dark:text-primary">
                     Mais detalhes
