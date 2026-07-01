@@ -1,2 +1,17 @@
 @import "tailwindcss";
-@config "../../tailwind.config.cjs";
+
+@theme {
+  --color-primary: #06cdcc;
+  --color-secondary: #ff7e33;
+  --color-info: #0C63E7;
+  --color-gray-50: #FAFAFC;
+  --color-gray-100: #E9E9EC;
+  --color-gray-200: #C6C8CD;
+  --color-gray-300: #ACAEB6;
+  --color-gray-400: #92959F;
+  --color-gray-500: #777C87;
+  --color-gray-600: #5D6370;
+  --color-gray-700: #434959;
+  --color-gray-800: #293041;
+  --color-gray-900: #0f172a;
+}
