@@ -8,11 +8,19 @@ const options = {
 
 export const courses = [
     {
+        id: slugify("Flutter utilizando bluetooth p/ conexão com impressoras POS", options),
+        title: "Flutter utilizando bluetooth p/ conexão com impressoras POS",
+        description: "Quase todo software precisa de alguma saída, e muitas vezes essa saída é uma impressão, bora aprender a fazer c/ flutter.",
+        image: "/images/cursos/flutter-utilizando-bluetooth-conexao-impressoras-pos.webp",
+        link: "https://www.udemy.com/course/flutter-utilizando-bluetooth-p-conexao-com-impressoras-pos/?couponCode=F2EB9E16414-AGO2026",
+        label: "Curso Flutter e impressora bluetooth",
+    },
+    {
         id: slugify("Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store", options),
         title: "Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store",
         description: "Aprenda de uma vez por todas como publicar seu aplicativo nas lojas oficiais! Vamos partir de uma ideia até seu app nas lojas!",
-        image: "/images/cursos/da-ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-play-e-apple-store.png",
-        link: "https://www.udemy.com/course/ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-apple/?couponCode=3032094F63E2-JUL2026",
+        image: "/images/cursos/da-ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-play-e-apple-store.webp",
+        link: "https://www.udemy.com/course/ideia-ate-o-deploy-de-aplicativos-nas-lojas-google-apple/?couponCode=E63253DEA9-AGO2026",
         label: "Curso deploy nas lojas",
     },
     {
@@ -20,15 +28,15 @@ export const courses = [
         title: "Curso Django REST Framework: crie APIs com Python",
         description: "Aprenda como criar aplicações REST com Python usando o DRF (Django REST Framework). Sua API de maneira fácil e segura",
         image: "/images/cursos/curso-django-rest-framework-crie-apis-com-python.webp",
-        link: "https://www.udemy.com/course/curso-django-rest-framework-crie-apis-com-python/?couponCode=0A8101D7623-JUL2026",
+        link: "https://www.udemy.com/course/curso-django-rest-framework-crie-apis-com-python/?couponCode=12C2C6E362-AGO2026",
         label: "Curso API com Django REST Framework",
     },
     {
         id: slugify("Quasar 2 framework: construindo um mini ERP online com API", options),
         title: "Quasar 2 framework: construindo um mini ERP online com API",
         description: "Quasar Framework é um framework de código aberto baseado em Vue.js para construir aplicativos com uma única code base",
-        image: "/images/cursos/quasar2-framework-construindo-mini-erp-online-com-api.png",
-        link: "https://www.udemy.com/course/desenvolvimento-web-construindo-aplicacao-de-maneira-rapida/?couponCode=CFDF74A8D460-JUL2026",
+        image: "/images/cursos/quasar2-framework-construindo-mini-erp-online-com-api.webp",
+        link: "https://www.udemy.com/course/desenvolvimento-web-construindo-aplicacao-de-maneira-rapida/?couponCode=7B13424D7B9A-AGO2026",
         label: "Curso Quasar",
     },
     {
@@ -36,7 +44,7 @@ export const courses = [
         title: "Go para iniciantes: Uma introdução a linguagem do Google",
         description: "Fundamentos teóricos, desafios práticos e SUPORTE garantido para uma aprendizagem completa.",
         image: "/images/cursos/go-para-iniciantes-uma-introducao-a-linguagem-do-google.webp",
-        link: "https://www.udemy.com/course/aprenda-go-aka-golang-a-linguagem-do-google/?couponCode=CF4DA1DAE-JUL2026",
+        link: "https://www.udemy.com/course/aprenda-go-aka-golang-a-linguagem-do-google/?couponCode=126CB3E10938-AGO2026",
         label: "Curso Go Iniciante",
     },
     {
@@ -44,7 +52,7 @@ export const courses = [
         title: "Laravel 12 e Flutter 3 aplicações com comunicação real-time 2025 - Impressor",
         description: "Domine Flutter e Laravel com foco em comunicação em tempo real, criando aplicações modernas e integradas para múltiplas plataformas.",
         image: "/images/cursos/laravel-11-e-flutter-3-aplicacoes-realtime-2024-impressor.webp",
-        link: "https://www.udemy.com/course/laravel-11-flutter-3-aplicacoes-tempo-real-impressor-delivery-desktop/?couponCode=61B4BED372-JUL2026",
+        link: "https://www.udemy.com/course/laravel-11-flutter-3-aplicacoes-tempo-real-impressor-delivery-desktop/?couponCode=902B8AD550-AGO2026",
         label: "Curso Flutter e Laravel - RealTime",
     },
     {
@@ -52,7 +60,7 @@ export const courses = [
         title: "Curso Flutter completo/Atualizado 2026 Android/iOS/Windows",
         description: "Curso completo de Flutter e Dart - Aprenda desde o básico até aplicativos práticos para Android, iOS, Windows e Mac.",
         image: "/images/cursos/curso-flutter-completo-atualizado-2024-android-ios-windows.webp",
-        link: "https://www.udemy.com/course/curso-de-flutter-e-dart-completo-atualizado/?couponCode=E0DDEBBD16D-JUL2026",
+        link: "https://www.udemy.com/course/curso-de-flutter-e-dart-completo-atualizado/?couponCode=8C86E3C852B-AGO2026",
         label: "Curso Flutter Completo",
     },
     {
@@ -60,7 +68,7 @@ export const courses = [
         title: "Projeto Delivery Hortifruti c/ Flutter 3 + AdonisJS 5 NodeJS",
         description: "Aprenda a criar um aplicativo de delivery de hortifruti com Flutter 3 e um backend com AdonisJS 5.",
         image: "/images/cursos/projeto-delivery-hortifruti-com-flutter-3-adonisjs-5-nodejs.webp",
-        link: "https://www.udemy.com/course/curso-flutter-3-e-getx-api-adonisjs-projeto-hortifruti/?couponCode=4A02F60C90D-JUL2026",
+        link: "https://www.udemy.com/course/curso-flutter-3-e-getx-api-adonisjs-projeto-hortifruti/?couponCode=EB858FB2CF43-AGO2026",
         label: "Curso Flutter e AdonisJS",
     },
 ];
