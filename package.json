@@ -13,7 +13,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
+<<<<<<< HEAD
     "astro": "^7.2.4",
+=======
+    "astro": "^7.1.6",
+>>>>>>> d7ba0d3bfd7c5a65d9d91c01815489ac891a6cc0
     "astro-font": "^1.1.0",
     "slugify": "^1.6.9"
   },
