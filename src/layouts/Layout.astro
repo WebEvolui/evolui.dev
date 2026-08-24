@@ -1,14 +1,30 @@
 ---
 import { AstroFont } from "astro-font";
+import { getImage } from "astro:assets";
 import AppFooter from "../components/AppFooter.astro";
 import AppHeader from "../components/AppHeader.astro";
+import socialPreview from "../assets/evolui-social-preview.png";
 import "../styles/global.css";
 
-const title = "Evolui.dev - Cursos de programação e comunidade";
-const description =
-  "Evolui.dev - Aqui você evolui como desenvolvedor(a)";
-const image = "/images/evolui.dev.png";
-const url = "https://evolui.dev";
+const siteUrl = "https://evolui.dev";
+const {
+  title = "Evolui.dev - Cursos de programação e comunidade",
+  description = "Evolui.dev - Aqui você evolui como desenvolvedor(a)",
+  image,
+  imageAlt = "Evolui.dev - Cursos de programação e comunidade",
+  url = "/",
+  type = "website",
+} = Astro.props;
+const optimizedSocialPreview = await getImage({
+  src: socialPreview,
+  width: 1200,
+  format: "jpeg",
+  quality: "high",
+});
+const canonicalUrl = new URL(url, siteUrl).toString();
+const imageUrl = image
+  ? new URL(image, siteUrl).toString()
+  : new URL(optimizedSocialPreview.src, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -22,20 +38,26 @@ const url = "https://evolui.dev";
       name="description"
       content={description}
     />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={url} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:secure_url" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Evolui.dev" />
+    <meta property="og:locale" content="pt_BR" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
     <AstroFont
       config={[

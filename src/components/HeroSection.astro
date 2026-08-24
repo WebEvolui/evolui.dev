@@ -1,5 +1,6 @@
 ---
 import Container from "./Container.astro";
+import HeroBackdrop from "./HeroBackdrop.astro";
 const {
   titlePart1 = "Evolui",
   titlePart2 = ".dev",
@@ -7,31 +8,19 @@ const {
 } = Astro.props;
 ---
 
-<div class="relative" id="home">
-  <div
-    aria-hidden="true"
-    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
-  >
-    <div
-      class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"
-    >
-    </div>
-    <div
-      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
-    >
-    </div>
-  </div>
+<div class="relative isolate overflow-hidden" id="home">
+  <HeroBackdrop />
   <Container>
-    <div class="relative pt-36 ml-auto">
+    <div class="relative py-24 md:py-32 lg:py-36 ml-auto">
       <div class="lg:w-2/3 text-center mx-auto">
         <h1
-          class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"
+          class="text-white font-bold text-5xl md:text-6xl xl:text-7xl drop-shadow-sm"
         >
-          {titlePart1}<span class="text-primary dark:text-white"
+          {titlePart1}<span class="text-primary"
             >{titlePart2}</span
           >
         </h1>
-        <p class="mt-8 text-gray-700 dark:text-gray-300">
+        <p class="mt-8 text-lg leading-relaxed text-slate-200 md:text-xl">
           {description}
         </p>
       </div>

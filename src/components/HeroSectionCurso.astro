@@ -1,54 +1,55 @@
 ---
 import Container from "./Container.astro";
+import HeroBackdrop from "./HeroBackdrop.astro";
+import { Image } from "astro:assets";
 const { title, description, image, link, label } = Astro.props;
 ---
 
-<div class="relative" id="home">
-  <div
-    aria-hidden="true"
-    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
-  >
-    <div
-      class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"
-    >
-    </div>
-    <div
-      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
-    >
-    </div>
-  </div>
+<div class="relative isolate overflow-hidden" id="home">
+  <HeroBackdrop />
   <Container>
-    <div class="relative pt-36 ml-auto">
+    <div class="relative py-20 md:py-28 ml-auto">
       <div class="lg:w-2/3 text-center mx-auto">
         <div class="flex justify-center mb-8">
-          <img src={image} alt={title} class="w-96 rounded-md" />
+          <Image
+            src={image}
+            alt={`Capa do curso ${title}`}
+            width={750}
+            height={422}
+            widths={[320, 480, 640, 750]}
+            sizes="(min-width: 768px) 384px, calc(100vw - 3rem)"
+            format="webp"
+            quality="high"
+            priority
+            class="w-96 rounded-xl border border-white/20 shadow-2xl shadow-black/40"
+          />
         </div>
         <h1
-          class="text-gray-900 dark:text-white font-bold text-2xl md:text-3xl xl:text-4xl"
+          class="text-white font-bold text-2xl md:text-3xl xl:text-4xl"
         >
-          <span class="text-primary dark:text-white">{title}</span>
+          <span class="text-white">{title}</span>
         </h1>
-        <p class="mt-8 text-gray-700 dark:text-gray-300">
+        <p class="mt-8 text-slate-200">
           {description}
         </p>
         <div class="mt-8">
           <a
             href={link}
-            class="inline-block bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-6 rounded-md shadow-md transition-all duration-300"
+            class="inline-block bg-primary hover:bg-secondary text-slate-950 font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300"
           >
             Comprar com desconto
           </a>
         </div>
-        <p class="mt-6 text-gray-600 dark:text-gray-400 text-sm">
-          Gostou do curso?
+        <p class="mt-6 text-slate-300 text-sm">
+          Gostou do curso?{" "}
           <a
             href={`https://github.com/WebEvolui/evolui.dev/issues/new?labels=curso,sugest%C3%A3o,${label}`}
             rel="noopener noreferrer"
-            class="text-purple-600 hover:underline"
+            class="text-primary hover:text-white hover:underline"
           >
             Comente sobre ele no nosso GitHub
           </a>
-          e ajude a melhorá-lo!
+          {" "}e ajude a melhorá-lo!
         </p>
       </div>
     </div>

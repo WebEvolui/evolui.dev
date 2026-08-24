@@ -1,0 +1,36 @@
+---
+import { getImage } from "astro:assets";
+import heroBackground from "../assets/evolui-hero-background.png";
+
+const optimizedHeroBackground = await getImage({
+  src: heroBackground,
+  width: 1600,
+  format: "webp",
+  quality: "mid",
+});
+---
+
+<div
+  class="hero-backdrop absolute inset-0 -z-10"
+  style={`--hero-backdrop: url("${optimizedHeroBackground.src}")`}
+  aria-hidden="true"
+></div>
+
+<style>
+  .hero-backdrop {
+    background-image:
+      linear-gradient(90deg, rgba(3, 13, 31, 0.96) 0%, rgba(3, 13, 31, 0.86) 45%, rgba(3, 13, 31, 0.35) 100%),
+      var(--hero-backdrop);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to right, black, transparent 78%);
+  }
+</style>

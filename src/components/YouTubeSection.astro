@@ -1,5 +1,8 @@
 ---
 import Container from "./Container.astro";
+import { Image } from "astro:assets";
+import youtubeBanner from "../assets/canal-webdutras-ewerton-dutra-conteudo-de-graca.png";
+import memberEventBanner from "../assets/evento-empreendendo-sendo-programador-membros-nivel-2-webdutras.png";
 ---
 
 <div id="youtube" class="py-16">
@@ -38,12 +41,16 @@ import Container from "./Container.astro";
         </div>
         <div class="mt-8">
           <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-700">
-            <img
-              src="/images/canal-webdutras-ewerton-dutra-conteudo-de-graca.png"
+            <Image
+              src={youtubeBanner}
               alt="Canal WebDutras - Ewerton Dutra - Conteúdo de graça"
               loading="lazy"
-              width="1280"
-              height="720"
+              width={750}
+              height={422}
+              widths={[360, 540, 750]}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              format="webp"
+              quality="mid"
               class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
           </div>
@@ -85,12 +92,16 @@ import Container from "./Container.astro";
         </div>
         <div class="mt-8">
           <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-700">
-            <img
-              src="/images/evento-empreendendo-sendo-programador-membros-nivel-2-webdutras.png"
+            <Image
+              src={memberEventBanner}
               alt="Evento para membros nível 2 do canal"
               loading="lazy"
-              width="1280"
-              height="720"
+              width={750}
+              height={422}
+              widths={[360, 540, 750]}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              format="webp"
+              quality="mid"
               class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
           </div>

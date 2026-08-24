@@ -18,7 +18,13 @@ if (!course) {
 }
 ---
 
-<Layout>
+<Layout
+  title={`${course.title} | Evolui.dev`}
+  description={course.description}
+  image={course.image.src}
+  imageAlt={`Capa do curso: ${course.title}`}
+  url={`/curso/${course.id}/`}
+>
   <main class="space-y-20 mb-40">
     <HeroSectionCurso
       title={course.title}
