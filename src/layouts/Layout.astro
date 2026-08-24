@@ -15,16 +15,14 @@ const {
   url = "/",
   type = "website",
 } = Astro.props;
-const optimizedSocialPreview = await getImage({
-  src: socialPreview,
+const optimizedImage = await getImage({
+  src: image ?? socialPreview,
   width: 1200,
   format: "jpeg",
   quality: "high",
 });
 const canonicalUrl = new URL(url, siteUrl).toString();
-const imageUrl = image
-  ? new URL(image, siteUrl).toString()
-  : new URL(optimizedSocialPreview.src, siteUrl).toString();
+const imageUrl = new URL(optimizedImage.src, siteUrl).toString();
 ---
 
 <!doctype html>
