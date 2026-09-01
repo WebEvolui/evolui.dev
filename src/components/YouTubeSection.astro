@@ -5,45 +5,34 @@ import youtubeBanner from "../assets/canal-webdutras-ewerton-dutra-conteudo-de-g
 import memberEventBanner from "../assets/evento-empreendendo-sendo-programador-membros-nivel-2-webdutras.png";
 ---
 
-<div id="youtube" class="py-16">
+<section id="content" class="py-16" aria-labelledby="content-title">
   <Container>
     <div class="mb-12 space-y-2 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
+      <h2 id="content-title" class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
         Conteúdo gratuito e eventos exclusivos
       </h2>
       <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
-        Acompanhe o canal no YouTube com conteúdo 100% gratuito e participe
-        dos eventos exclusivos para membros nível 2.
+        Acompanhe o canal no YouTube e conheça os eventos para membros do canal.
       </p>
     </div>
+
     <div class="grid gap-8 lg:grid-cols-2">
-      <!-- YouTube Channel -->
-      <div class="group flex flex-col justify-between rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 p-8">
+      <article class="group flex flex-col justify-between rounded-3xl border border-gray-100 bg-white/50 p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none">
         <div>
-          <div class="flex items-center gap-3 mb-6">
-            <span class="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-1.5 text-sm font-semibold text-red-500">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-              YouTube
-            </span>
-            <span class="inline-flex items-center rounded-full bg-green-500/10 px-4 py-1.5 text-sm font-semibold text-green-500">
-              Conteúdo gratuito
-            </span>
+          <div class="mb-6 flex items-center gap-3">
+            <span class="inline-flex items-center rounded-full bg-red-500/10 px-4 py-1.5 text-sm font-semibold text-red-800 dark:text-red-300">YouTube</span>
+            <span class="inline-flex items-center rounded-full bg-green-500/10 px-4 py-1.5 text-sm font-semibold text-green-800 dark:text-green-300">Conteúdo gratuito</span>
           </div>
-          <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
-            Acompanhe o canal no YouTube
-          </h2>
+          <h3 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">Acompanhe o canal no YouTube</h3>
           <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Todo o conteúdo do canal é <strong class="font-semibold text-gray-800 dark:text-white">100% gratuito</strong>! 
-            Aulas, projetos e dicas para você evoluir como desenvolvedor(a) sem pagar nada.
+            Aulas, projetos e dicas para você evoluir como desenvolvedor(a).
           </p>
         </div>
         <div class="mt-8">
           <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-700">
             <Image
               src={youtubeBanner}
-              alt="Canal WebDutras - Ewerton Dutra - Conteúdo de graça"
+              alt="Canal WebDutras, de Ewerton Dutra"
               loading="lazy"
               width={750}
               height={422}
@@ -56,38 +45,22 @@ import memberEventBanner from "../assets/evento-empreendendo-sendo-programador-m
           </div>
           <a
             href="https://www.youtube.com/channel/UC1eSF-wA6ScYUdAj-nq5TFA?sub_confirmation=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-red-500 px-8 text-base font-semibold text-white transition duration-300 hover:bg-red-600 active:scale-95 sm:w-max"
+            class="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-red-600 px-8 text-base font-semibold text-white transition hover:bg-red-700 sm:w-max"
           >
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
             Inscrever-se no canal
           </a>
         </div>
-      </div>
+      </article>
 
-      <!-- Member Level 2 Event -->
-      <div class="group flex flex-col justify-between rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 p-8">
+      <article class="group flex flex-col justify-between rounded-3xl border border-gray-100 bg-white/50 p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none">
         <div>
-          <div class="flex items-center gap-3 mb-6">
-            <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-              </svg>
-              Evento exclusivo
-            </span>
-            <span class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-sm font-semibold text-secondary">
-              Membros nível 2
-            </span>
+          <div class="mb-6 flex items-center gap-3">
+            <span class="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-cyan-800 dark:text-cyan-300">Evento exclusivo</span>
+            <span class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-sm font-semibold text-orange-800 dark:text-orange-300">Membros nível 2</span>
           </div>
-          <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
-            Evento para membros nível 2
-          </h2>
+          <h3 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">Evento para membros nível 2</h3>
           <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Um evento exclusivo para os membros de nível 2 do canal. 
-            Participe de encontros ao vivo, conteúdos especiais e muito mais!
+            Participe de encontros ao vivo, conteúdos especiais e muito mais.
           </p>
         </div>
         <div class="mt-8">
@@ -107,18 +80,12 @@ import memberEventBanner from "../assets/evento-empreendendo-sendo-programador-m
           </div>
           <a
             href="https://www.youtube.com/@WebDutras/join"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-semibold text-white transition duration-300 hover:bg-secondary active:scale-95 sm:w-max"
+            class="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-8 text-base font-semibold text-slate-950 transition hover:bg-cyan-300 sm:w-max"
           >
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-              <line x1="7" y1="7" x2="7.01" y2="7"/>
-            </svg>
             Tornar-se membro
           </a>
         </div>
-      </div>
+      </article>
     </div>
   </Container>
-</div>
+</section>

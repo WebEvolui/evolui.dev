@@ -8,12 +8,13 @@ const {
 } = Astro.props;
 ---
 
-<div class="relative isolate overflow-hidden" id="home">
+<section class="relative isolate overflow-hidden" aria-labelledby="hero-title">
   <HeroBackdrop />
   <Container>
     <div class="relative py-24 md:py-32 lg:py-36 ml-auto">
       <div class="lg:w-2/3 text-center mx-auto">
         <h1
+          id="hero-title"
           class="text-white font-bold text-5xl md:text-6xl xl:text-7xl drop-shadow-sm"
         >
           {titlePart1}<span class="text-primary"
@@ -26,4 +27,4 @@ const {
       </div>
     </div>
   </Container>
-</div>
+</section>
