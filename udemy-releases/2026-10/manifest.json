@@ -4,13 +4,13 @@
   "sourceExport": "arquivos/eligible_courses_2026-10-01_13h31m.csv",
   "sourceExportTimestamp": "2026-10-01T13:31:00",
   "sourceExportTimezone": "not specified in filename",
-  "generatedAt": "2026-10-01T13:38:02Z",
+  "generatedAt": "2026-10-01T14:13:49Z",
   "couponType": "custom_price",
   "customPrice": "min",
   "durationDays": 31,
   "durationNote": "Udemy custom-price coupons expire automatically after 31 days; this is separate from the scheduled activation date/time and is not a CSV field.",
   "activation": {
-    "date": "2026-10-02",
+    "date": "2026-10-01",
     "time": "00:01",
     "timezone": "America/Los_Angeles"
   },
