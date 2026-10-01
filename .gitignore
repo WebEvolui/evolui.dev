@@ -7,6 +7,9 @@ reports/
 node_modules/
 .astro/
 
+# generated release data
+udemy-releases/
+
 # logs
 npm-debug.log*
 yarn-debug.log*
