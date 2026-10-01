@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cupons mensais Udemy"
+  short_description: "Renova cupons, atualiza o site e prepara dist"
+  default_prompt: "Use $udemy-coupon-release para iniciar a atualização mensal dos cupons Udemy deste projeto."

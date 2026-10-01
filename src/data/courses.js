@@ -16,6 +16,7 @@ const options = {
 
 export const courses = [
     {
+        udemyCourseId: 7264247,
         id: slugify("Flutter utilizando bluetooth p/ conexão com impressoras POS", options),
         title: "Flutter utilizando bluetooth p/ conexão com impressoras POS",
         description: "Quase todo software precisa de alguma saída, e muitas vezes essa saída é uma impressão, bora aprender a fazer c/ flutter.",
@@ -24,6 +25,7 @@ export const courses = [
         label: "Curso Flutter e impressora bluetooth",
     },
     {
+        udemyCourseId: 7068193,
         id: slugify("Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store", options),
         title: "Da ideia até o deploy de aplicativos nas lojas: Google Play e Apple Store",
         description: "Aprenda de uma vez por todas como publicar seu aplicativo nas lojas oficiais! Vamos partir de uma ideia até seu app nas lojas!",
@@ -32,6 +34,7 @@ export const courses = [
         label: "Curso deploy nas lojas",
     },
     {
+        udemyCourseId: 6650969,
         id: slugify("Curso Django REST Framework: crie APIs com Python", options),
         title: "Curso Django REST Framework: crie APIs com Python",
         description: "Aprenda como criar aplicações REST com Python usando o DRF (Django REST Framework). Sua API de maneira fácil e segura",
@@ -40,6 +43,7 @@ export const courses = [
         label: "Curso API com Django REST Framework",
     },
     {
+        udemyCourseId: 6247407,
         id: slugify("Quasar 2 framework: construindo um mini ERP online com API", options),
         title: "Quasar 2 framework: construindo um mini ERP online com API",
         description: "Quasar Framework é um framework de código aberto baseado em Vue.js para construir aplicativos com uma única code base",
@@ -48,6 +52,7 @@ export const courses = [
         label: "Curso Quasar",
     },
     {
+        udemyCourseId: 5920094,
         id: slugify("Go para iniciantes: Uma introdução a linguagem do Google", options),
         title: "Go para iniciantes: Uma introdução a linguagem do Google",
         description: "Fundamentos teóricos, desafios práticos e SUPORTE garantido para uma aprendizagem completa.",
@@ -56,6 +61,7 @@ export const courses = [
         label: "Curso Go Iniciante",
     },
     {
+        udemyCourseId: 5877166,
         id: slugify("Laravel 12 e Flutter 3 aplicações com comunicação real-time 2025 - Impressor", options),
         title: "Laravel 12 e Flutter 3 aplicações com comunicação real-time 2025 - Impressor",
         description: "Domine Flutter e Laravel com foco em comunicação em tempo real, criando aplicações modernas e integradas para múltiplas plataformas.",
@@ -64,6 +70,7 @@ export const courses = [
         label: "Curso Flutter e Laravel - RealTime",
     },
     {
+        udemyCourseId: 5637922,
         id: slugify("Curso Flutter completo/Atualizado 2026 Android/iOS/Windows", options),
         title: "Curso Flutter completo/Atualizado 2026 Android/iOS/Windows",
         description: "Curso completo de Flutter e Dart - Aprenda desde o básico até aplicativos práticos para Android, iOS, Windows e Mac.",
@@ -72,6 +79,7 @@ export const courses = [
         label: "Curso Flutter Completo",
     },
     {
+        udemyCourseId: 4712650,
         id: slugify("Projeto Delivery Hortifruti c/ Flutter 3 + AdonisJS 5 NodeJS", options),
         title: "Projeto Delivery Hortifruti c/ Flutter 3 + AdonisJS 5 NodeJS",
         description: "Aprenda a criar um aplicativo de delivery de hortifruti com Flutter 3 e um backend com AdonisJS 5.",

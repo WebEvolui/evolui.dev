@@ -1,0 +1,40 @@
+---
+name: udemy-coupon-release
+description: "Renove os cupons mensais dos cursos Udemy do Evolui.dev: gere o CSV de preço mínimo, aguarde o upload manual, atualize os links do projeto, confira dependências, faça o build e avise quando dist estiver pronto para o usuário publicar. Use quando o usuário iniciar a atualização mensal de cupons."
+---
+
+# Atualização mensal dos cupons Udemy
+
+Execute este fluxo apenas quando o usuário solicitar a renovação mensal. É um processo em duas fases, pois o CSV precisa ser enviado manualmente à Udemy. Depois que o usuário confirmar a criação dos cupons, atualize o projeto, gere `dist/` e avise que está pronto para ele fazer o upload manual no servidor.
+
+## Contexto deste projeto
+
+- O site é um projeto Astro estático; os cursos, títulos, slugs e links promocionais ficam em `src/data/courses.js`.
+- O build de produção escreve em `dist/`.
+- Atualmente os cursos têm links Udemy com `couponCode` na query string; preservar o caminho de cada curso e alterar somente esse valor.
+- Cada curso armazena o ID Udemy em `udemyCourseId` dentro de `src/data/courses.js`. Use esse valor nas renovações para cursos conhecidos; não releia o CSV só para recuperar IDs.
+
+## Fase 1: preparar CSV e aguardar a Udemy
+
+1. Determine o mês atual no fuso `America/Sao_Paulo` e seu sufixo JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV ou DEZ. Use os `udemyCourseId` já salvos para os cursos existentes. Peça um export da página de criação de cupons em massa da Udemy apenas se existir curso novo sem ID confiável, se o usuário pedir para revalidar IDs ou se algum dado estiver em conflito. Quando o usuário fornecer um export atual, inspecione cabeçalhos e conteúdo e use também os saldos para verificar elegibilidade.
+2. Sem export atual, gere cupons para os cursos cadastrados com `udemyCourseId` e informe que o saldo disponível não foi revalidado nesta execução. Com export atual, inclua somente cursos correspondentes com `coupons_remaining` maior que zero e ignore os sem disponibilidade. Para curso novo, associe por título/slug com confirmação inequívoca, salve seu `udemyCourseId` em `src/data/courses.js` e nunca invente ou adivinhe o ID. Se houver conflito entre arquivo e código, pare e pergunte.
+3. Gere para cada curso elegível um código próprio com 10 caracteres aleatórios A–Z/0–9, seguido de `-<MES><ANO>` (ex.: `F2A91D48BC-OUT2026`). Antes de aceitar o código, confira que ele não aparece no link atual daquele curso nem no histórico de liberações deste projeto. Nunca reutilize um código para o mesmo curso; se o histórico não existir, comece-o nesta execução e mantenha-o nas próximas. O histórico pode ficar em `udemy-releases/history.json`, fora de `dist/`, com mês, slug do curso, ID Udemy, código e estado (`pending_upload`/`uploaded`/`built_ready_for_manual_upload`). Registre códigos criados como reservados mesmo enquanto aguardam upload.
+4. Use `coupon_type=custom_price` e `custom_price=min` em todas as linhas. Nunca use os valores de preço do export como preço da oferta. Na Udemy, a opção de preço personalizado expira automaticamente em 31 dias; isso é diferente de `start_date`/`start_time`, que definem quando o cupom começa a valer. Gere CSV UTF-8 separado por vírgula, com estes cabeçalhos exatos e nesta ordem: `course_id,coupon_type,coupon_code,start_date,start_time,custom_price`. O modelo de CSV não tem campo de duração/expiração: não acrescente colunas nem tente encurtar a validade alterando a data de ativação. Limite cada arquivo a 200 cupons e divida em partes numeradas se necessário.
+5. Agende a data/hora para uma ativação futura válida na zona da Udemy (`America/Los_Angeles`), mantendo a data dentro do mês atual em São Paulo. Use `00:01` no horário do Pacífico quando ainda for futuro naquela data; se esse horário já passou, use a próxima data e `00:01`. Se a próxima data ultrapassar o mês, ou não restar data válida, pare e explique a situação antes de gerar. Escreva `start_date` no formato `YYYY-MM-DD`. Não converta o horário para Brasília: a Udemy interpreta o horário do Pacífico.
+6. Salve o(s) arquivo(s) como `udemy-cupons-AAAA-MM.csv` (ou `udemy-cupons-AAAA-MM-parte-NN.csv`) em `udemy-releases/AAAA-MM/`. Gere também um manifesto desta execução com os cursos elegíveis/ignorados e motivos, associações confirmadas, data/hora/fuso, caminhos dos CSVs, validade automática de 31 dias e status `pending_upload`. Mantenha os arquivos de liberação fora de `dist/`.
+7. Faça uma verificação independente do CSV: cabeçalho exato, linhas de dados ≤ 200 por arquivo, IDs e cursos distintos/corretos, códigos únicos com mês/ano correto, `coupon_type=custom_price`, `custom_price=min` e data de ativação futura. Confira saldo apenas quando houver export atual. Não atualize links de cupom em `src/data/courses.js` nesta fase; a exceção é adicionar `udemyCourseId` de um curso novo já confirmado. Nunca tente criar/publicar cupons na Udemy.
+8. Informe literalmente ao usuário: “CSV de cupons criado. Agora faça o upload desse arquivo na página ‘Criação de cupons em massa’ da Udemy.” Liste caminho, mês, cursos/cupons incluídos, ignorados e motivo, confirme `custom_price=min` e informe que os cupons de preço personalizado expiram em 31 dias. Aguarde o usuário confirmar que concluiu o upload e que a Udemy aceitou os códigos. A confirmação precisa vir do usuário; não tente carregar o arquivo na conta Udemy.
+
+## Fase 2: atualizar e construir para publicação manual
+
+Só continue depois da confirmação de upload. Reabra o manifesto `pending_upload` correspondente e confira se ele pertence à liberação pedida. Se houver mais de uma liberação pendente ou a data/mês estiver ambíguo, peça que o usuário identifique o CSV aceito.
+
+1. Atualize em `src/data/courses.js` somente o `couponCode` do link de cada curso presente no manifesto. Preserve URL base, `udemyCourseId`, ID interno do curso, título, descrição, imagem, slug e demais campos. Não altere cursos que não foram aceitos pela Udemy. Atualize o manifesto/histórico para refletir o estado de upload confirmado.
+2. Confira automaticamente e/ou por leitura do diff: cada código corresponde ao `course_id` e ao curso mapeado; todos os cupons aceitos aparecem uma única vez no curso correto; não há códigos duplicados indevidamente ou códigos antigos desses cursos; URLs continuam HTTPS e com `?couponCode=<CODIGO>`; o sufixo e o mês estão corretos; todas as linhas do CSV usam `custom_price=min`. Se algo divergir, corrija antes de prosseguir ou pare para perguntar.
+3. Verifique atualizações com `npm outdated` e vulnerabilidades com `npm audit`. Interprete os resultados; não atualize tudo em lote. Priorize vulnerabilidades aplicáveis e correções pequenas/compatíveis. Não aplique upgrades major de Astro, Vite ou bibliotecas principais sem avaliar compatibilidade e obter orientação do usuário. Registre versões afetadas, recomendações e o que foi atualizado ou mantido. Se uma atualização for aplicada, valide-a e rode novamente o build.
+4. Execute `npm run build`. Só prossiga se terminar com sucesso e confirmar que `dist/` contém a home, páginas de cursos e recursos gerados, além do `robots.txt`/sitemap se presentes no projeto. Não copie CSV, histórico ou manifesto para `dist/`.
+5. Não faça deploy, FTP, sincronização de arquivos ou qualquer alteração no servidor. O usuário publica manualmente. Informe claramente que o build terminou e que deve enviar o conteúdo da pasta `dist/` para o servidor. Atualize o manifesto para `built_ready_for_manual_upload`; não marque como online/publicado.
+
+## Relatório final
+
+Resuma mês, cursos encontrados/elegíveis/ignorados, cupons por arquivo, preço (`custom_price=min`), estado de upload Udemy, atualização dos links (x/y), resultado de `npm outdated`/`npm audit`, mudanças de dependências, resultado do build e caminho de `dist/`. Informe que o conteúdo de `dist/` está pronto para upload manual. Não afirme que cupons foram criados pela Udemy sem confirmação do usuário nem que o site está online, pois o usuário fará a publicação.
